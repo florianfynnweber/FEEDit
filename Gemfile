@@ -27,15 +27,45 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "chartkick" # add charts easy with obj
+gem "wdm", ">= 0.1.0" if Gem.win_platform?
+gem "wicked_pdf" # for pdf generation
+gem "wkhtmltopdf-binary" # for pdf generation
+
+gem "jquery-rails" # add jquery library
+gem "bootstrap" # add bootstrap
+gem "active_model_serializers" # API
+gem "sidekiq" # queue
+gem "sdoc" # documentation
+gem "devise" # user authentication
+gem "devise_ldap_authenticatable"
+gem "font-awesome-sass", "~> 5.9.0"
+gem "figaro"
+gem "pagy"                             # pagination
+gem "pager_api"                        # pagination for the api
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rubocop"
+  gem "rubocop-rails_config", platforms: [:mri, :mingw, :x64_mingw]
+  gem "faker"
+  gem "factory_bot"
+  gem "brakeman"
+  gem "rails_best_practices"
+  gem "webmock" # test webhooks
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem "listen"
+  # spring 2.1.0 does not work with Ubuntu 16.04, needs fixing
+  gem "spring", "< 2.1.0"
+  gem "spring-watcher-listen"
+  gem "capistrano-rails"
+  gem "capistrano-bundler"
+  gem "letter_opener"
 end
 
 group :test do
@@ -44,6 +74,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem "simplecov", require: false
+  gem "rails-controller-testing"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

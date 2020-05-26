@@ -1,0 +1,52 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'public/**/*'
+    - 'tmp/**/*'
+    - 'coverage/**/*'
+    - 'config.ru'
+    - 'Rakefile'
+
+Metrics/LineLength:
+  Max: 110
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/RedundantBegin:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Layout/FirstParameterIndentation:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: false
+
