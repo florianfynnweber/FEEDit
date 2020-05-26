@@ -32,7 +32,6 @@ gem "wdm", ">= 0.1.0" if Gem.win_platform?
 gem "wicked_pdf" # for pdf generation
 gem "wkhtmltopdf-binary" # for pdf generation
 
-gem "jquery-rails" # add jquery library
 gem "bootstrap" # add bootstrap
 gem "active_model_serializers" # API
 gem "sidekiq" # queue
