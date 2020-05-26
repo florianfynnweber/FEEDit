@@ -1,0 +1,1 @@
+Figaro.require_keys("db_user", "db_password")
