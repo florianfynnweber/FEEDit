@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: wbt_cocktailooo_rails_api_development
+  database: FEEDit_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: wbt_cocktailooo_rails_api_test
+  database: FEEDit_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: wbt_cocktailooo_rails_api_production
-  username: wbt_cocktailooo_rails_api
-  password: <%= ENV['WBT_COCKTAILOOO_RAILS_API_DATABASE_PASSWORD'] %>
+  database: FEEDit
+  username: <%= ENV["db_user"] %>
+  password: <%= ENV["db_password"] %>
