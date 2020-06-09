@@ -1,0 +1,54 @@
+User
+- name
+- email
+- profilbild
+- created_at
+- updated_at
+- rolle (0,1,2,3) [Eltern, Schüler, Lehrer, Schulleitung]
+
+Kurs:
+- User
+- Schule
+- namen
+- profilbild
+
+Schule:
+- namen
+- email
+- telefon
+- adresse
+- Kurse
+- User
+
+Aufgabe:
+- titel
+- status
+- abgabedatum (DateTime)
+- beschreibung
+- anhang (*)
+- Abgaben
+
+Abgabe:
+- Users
+- status
+- beschreibung
+- Anhang
+- Feedback
+- created_at
+- updated_at
+
+Feedback:
+- Lehrer
+- titel
+- beschreibung
+- note (float)
+
+Settings: (Notenskala)
+- key
+- value
+
+
+Notenskala Enum
+Kurs *-* User
+Kurs *-1 Schule
+Schule 1-*User
