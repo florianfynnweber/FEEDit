@@ -40,12 +40,14 @@ def fake_desc
   end
 end
 
-if (!User.find_by_name("admin"))
-  User.create!(name: "admin", email: 'admin@example.net', password: 'adminadmin', confirmed_at: DateTime.now)
-end
+
 
 if (School.all.count < 2)
   School.create!(name: fake_school, email: Faker::Internet.email, address: fake_address)
+end
+
+if (!User.find_by_name("admin"))
+  User.create!(name: "admin", email: 'admin@example.net', password: 'adminadmin', confirmed_at: DateTime.now, school_id: 1)
 end
 
 if User.all.count < 30
