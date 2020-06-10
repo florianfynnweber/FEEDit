@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
   validates :email, presence: true, length: {maximum: 256},
             uniqueness: {case_sensitive: false}
-  has_one :school
+  belongs_to :school
 end
