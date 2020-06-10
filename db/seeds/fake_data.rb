@@ -54,11 +54,11 @@ if User.all.count < 30
   School.all.each do |school|
     # create students
     5.times do
-      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, role: 1, password: "useruser", school_id: school.id)
+      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, level: 1, password: "useruser", school_id: school.id)
     end
     # create teacher
     5.times do
-      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, role: 2, password: "useruser", school_id: school.id)
+      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, level: 2, password: "useruser", school_id: school.id)
     end
   end
 end
