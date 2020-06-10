@@ -14,7 +14,7 @@ AllCops:
     - 'config.ru'
     - 'Rakefile'
 
-Metrics/LineLength:
+Layout:
   Max: 110
 
 Style/RedundantReturn:
