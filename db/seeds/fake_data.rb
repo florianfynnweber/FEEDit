@@ -1,4 +1,3 @@
-
 require 'faker'
 
 def fake_name()
@@ -13,6 +12,18 @@ def fake_name()
   else
     # type code here
   end
+end
+
+def fake_school
+  return Faker::Educator.secondary_school
+end
+
+def fake_address
+  return Faker::Address.full_address
+end
+
+def fake_course
+  return Faker::Educator.course_name
 end
 
 def fake_desc
@@ -30,5 +41,31 @@ def fake_desc
 end
 
 if (!User.find_by_name("admin"))
-  User.create!(name: "admin", email: 'admin@example.net', password: 'adminadmin', admin: true, confirmed_at: DateTime.now)
+  User.create!(name: "admin", email: 'admin@example.net', password: 'adminadmin', confirmed_at: DateTime.now)
 end
+
+if (School.all.count < 2)
+  School.create!(name: fake_school, email: Faker::Internet.email, address: fake_address)
+end
+
+if User.all.count < 30
+  School.all.each do |school|
+    # create students
+    5.times do
+      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, role: 1, password: "useruser", school_id: school.id)
+    end
+    # create teacher
+    5.times do
+      User.create!(name: Faker::Movies::HarryPotter.name, email: Faker::Internet.email, role: 2, password: "useruser", school_id: school.id)
+    end
+  end
+end
+
+if Course.all.count < 20
+  School.all.each do |school|
+    2.times do
+      Course.create!(name: fake_course, school_id: school.id)
+    end
+  end
+end
+
