@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :comments
   has_many :feedbacks
 
-  enum role: [:parent, :student, :teacher, :admin]
+  enum level: [:parent, :student, :teacher, :admin]
 end
