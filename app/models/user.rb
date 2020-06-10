@@ -7,4 +7,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
   validates :email, presence: true, length: {maximum: 256},
             uniqueness: {case_sensitive: false}
+  belongs_to :school
+  has_many :comments
+  has_many :feedbacks
+
+  enum role: [:parent, :student, :teacher, :admin]
 end
