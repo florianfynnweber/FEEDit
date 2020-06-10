@@ -10,6 +10,5 @@ class User < ApplicationRecord
   belongs_to :school
   has_many :comments
   has_many :feedbacks
-
-  enum level: [:parent, :student, :teacher, :admin]
+  # enum levels: [:parent, :student, :teacher, :admin]
 end
