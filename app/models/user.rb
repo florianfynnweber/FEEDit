@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 256},
             uniqueness: {case_sensitive: false}
   belongs_to :school
+  has_many :comments
+  has_many :feedbacks
 end

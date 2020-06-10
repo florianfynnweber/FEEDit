@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_one :school
+  belongs_to :school
   has_many :users
 
 end
